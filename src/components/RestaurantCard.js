@@ -1,10 +1,10 @@
 import { CDN_URL } from "../utils/constants";
 
-const ResturantCard = (props) => {
+const RestaurantCard = (props) => {
   const { resData } = props;
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
     resData?.info;
-  console.log(resData);
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
@@ -20,4 +20,4 @@ const ResturantCard = (props) => {
   );
 };
 
-export default ResturantCard;
+export default RestaurantCard;
