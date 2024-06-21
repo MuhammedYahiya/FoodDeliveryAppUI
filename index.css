@@ -28,6 +28,7 @@
     width: 200px;
     border: 1px solid transparent;
     padding: 5px;
+    margin: 5px;
 }
 .res-card:hover {
     border: 1px solid black;
