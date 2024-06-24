@@ -24,6 +24,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.res-data{
+    text-decoration: none;
+    color: black;
+}
 .res-card{
     width: 200px;
     border: 1px solid transparent;
