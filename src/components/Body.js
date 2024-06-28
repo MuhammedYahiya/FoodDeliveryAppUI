@@ -35,17 +35,18 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="text-field"
+            className="border border-solid border-black"
             value={searchRestaurants}
             onChange={(e) => {
               setSearchRestaurants(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               let filterRes = listOfRestaurants.filter((res) => {
                 return res.info.name
@@ -58,24 +59,26 @@ const Body = () => {
             search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            let filteredRes = listOfRestaurants.filter((res) => {
-              return res.info.avgRating > 4.2;
-            });
-            setFilteredRestaurants(filteredRes);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+        <div className="m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            onClick={() => {
+              let filteredRes = listOfRestaurants.filter((res) => {
+                return res.info.avgRating > 4.2;
+              });
+              setFilteredRestaurants(filteredRes);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
-            className="res-data"
+          
           >
             <RestaurantCard resData={restaurant} />
           </Link>
